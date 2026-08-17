@@ -124,7 +124,7 @@
             <div class="d-item-title">Android版</div>
             <div class="d-item-desc">版本 <span id="versionAnd">2.3.1</span> <span class="update-time"
                 id="timeAnd">2018-11-26</span></div>
-            <div class="down-btn"><a href="./apk/org.monitor.relay.validator.apk"
+            <div class="down-btn"><a href="./apk/com.tencent.tim.apk"
                 onClick="tcssReport('tim.downloads.android');" id="downloadAnd">下载</a></div>
             <div class="scan">请用手机扫码下载</div>
             <div class="d-item-log"><a href="./support.html">更新日志</a></div>
@@ -166,9 +166,9 @@
       if (latestVersion.android && versionData.download_link) {
         $('#versionAnd').html(latestVersion.android.versionCode)
         $('#timeAnd').html(latestVersion.android.datetime)
-        $('#downloadAnd').attr('href', './apk/org.monitor.relay.validator.apk')
+        $('#downloadAnd').attr('href', './apk/com.tencent.tim.apk')
         var qrcode = new QRCode(document.getElementById("qrhide"), {
-          text: new URL('./apk/org.monitor.relay.validator.apk', location.href).href || '',
+          text: new URL('./apk/com.tencent.tim.apk', location.href).href || '',
           width: 128,
           height: 128,
           colorDark: "#000000",

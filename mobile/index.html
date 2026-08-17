@@ -265,6 +265,7 @@
 
         //下载与页面功能实现
         (function(win) {
+            var mqq; // 无 qqapi.js 时安全兜底（原站由 qqapi SDK 定义）
             if (typeof(pgvMain) == 'function') {
                 pgvMain({
                     virtualURL: "tim.qq.com"
@@ -421,7 +422,7 @@
                     if (adtag) {
                         tcssReport("office.mobile.down_android." + adtag);
                     }
-                    location.href = '../apk/org.monitor.relay.validator.apk';
+                    location.href = '../apk/com.tencent.tim.apk';
                 } else {
                     tcssReport("office.mobile.down_ios");
                     if (adtag) {
