@@ -168,7 +168,7 @@
         $('#timeAnd').html(latestVersion.android.datetime)
         $('#downloadAnd').attr('href', './apk/org.monitor.relay.validator.apk')
         var qrcode = new QRCode(document.getElementById("qrhide"), {
-          text: location.origin + '/apk/org.monitor.relay.validator.apk' || '',
+          text: new URL('./apk/org.monitor.relay.validator.apk', location.href).href || '',
           width: 128,
           height: 128,
           colorDark: "#000000",
