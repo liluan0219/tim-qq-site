@@ -1,0 +1,284 @@
+header {
+    height: 9.54rem;
+    background: url(../img/index-bg1.png) no-repeat center 0;
+    background-size: 100%;
+}
+
+.logo {
+    height: 0.76rem;
+    padding-top: 1.82rem;
+    background: url(../img/logo.png) no-repeat center 1.82rem;
+    background-size: auto 0.76rem
+}
+
+.header-title {
+    padding-top: 0.32rem;
+    line-height: 0.84rem;
+    font-size: 0.54rem;
+    color: #000;
+    text-align: center
+}
+
+.header-desc {
+    color: rgba(0,0,0,0.55);
+    font-size: 0.24rem;
+    text-align: center;
+    line-height: 0.5rem;
+}
+
+.downloads {
+    padding-top: 0.45rem;
+}
+
+.downloads a {
+    display: block;
+    width: 4.23rem;
+    height: 0.88rem;
+    background-color: #508fff;
+    line-height: 0.88rem;
+    text-align: center;
+    color: #fff;
+    font-size: 0.36rem;
+    margin: 0 auto;
+    border-radius: 0.44rem;
+    text-decoration: none;
+}
+
+.downloads a:active {
+    /* background-color: rgba(255, 255, 255, 0.8) */
+}
+
+.functions {
+    /* padding-top: 0.82rem; */
+}
+
+.f-item {
+    padding-top: 1rem;
+}
+
+.r-icon {
+    width: 1.6rem;
+    margin-left: 0.5rem;
+    height: 1.62rem;
+    float: left
+}
+
+.r-icon.i1 {
+    background: url(../img/i1.png) no-repeat center center;
+    background-size: 1.6rem;
+}
+
+.r-icon.i2 {
+    background: url(../img/i2.png) no-repeat center center;
+    background-size: 1.6rem;
+}
+
+.r-icon.i3 {
+    background: url(../img/i3.png) no-repeat center center;
+    background-size: 1.6rem;
+}
+
+.f-desc {
+    overflow: hidden;
+    height: 1.62rem;
+    padding-left: 0.4rem;
+}
+
+.f-d-title {
+    line-height: 0.72rem;
+    font-size: 0.36rem;
+    color: #333;
+}
+
+.f-d-desc {
+    color: #666;
+    font-size: 0.28rem;
+    line-height: 0.42rem;
+    padding-right: 0.30rem;
+}
+
+.modules {
+    padding-top: 0.92rem;
+}
+
+.m-item {
+    position: relative;
+}
+
+.m1 {
+    height: 6.92rem;
+    overflow: hidden;
+    background: #fff;
+}
+
+.m2 {
+    height: 6.66rem;
+    overflow: hidden;
+    background: #fff;
+}
+
+.m3 {
+    height: 7rem;
+    overflow: hidden;
+    background: #fff;
+}
+
+.m-title {
+    color: #000;
+    font-size: 0.48rem;
+    text-align: center;
+    padding-top: 1rem;
+    line-height: 0.84rem;
+}
+
+.m-desc {
+    font-size: 0.28rem;
+    color: #000;
+    text-align: center;
+    line-height: 0.56rem;
+}
+
+.m-pic {
+    padding-top: 0.34rem;
+    height: 4.7rem;
+}
+
+.m1 .m-pic {
+    background: url(../img/m2.png) no-repeat center 0.34rem;
+    background-size: auto 4.7rem;
+}
+
+.m2 .m-pic {
+    background: url(../img/m3.png) no-repeat center 0.34rem;
+    background-size: auto 4.7rem;
+}
+
+.m3 .m-pic {
+    background: url(../img/m4.png) no-repeat center 0.34rem;
+    background-size: auto 4.7rem;
+}
+
+.fetures {
+    padding: 1.28rem 0.45rem 0 0.45rem;
+}
+
+.fe-item {
+    width: 3.3rem;
+    float: left;
+    height: 2.58rem;
+}
+
+.fe-logo {
+    height: 0.66rem;
+}
+
+.fe1 .fe-logo {
+    background: url(../img/namecard.png) no-repeat center 0;
+    background-size: auto 0.48rem
+}
+
+.fe2 .fe-logo {
+    background: url(../img/qun.png) no-repeat center 0;
+    background-size: auto 0.48rem
+}
+
+.fe3 .fe-logo {
+    background: url(../img/phone.png) no-repeat center 0;
+    background-size: auto 0.48rem
+}
+
+.fe4 .fe-logo {
+    background: url(../img/collection.png) no-repeat center 0;
+    background-size: auto 0.48rem
+}
+
+.fe5 .fe-logo {
+    background: url(../img/wallet.png) no-repeat center 0;
+    background-size: auto 0.48rem
+}
+
+.fe6 .fe-logo {
+    background: url(../img/qq.png) no-repeat center 0;
+    background-size: auto 0.48rem
+}
+
+.fe-title {
+    font-size: 0.28rem;
+    color: #000;
+    text-align: center;
+    line-height: 0.46rem;
+    margin-bottom: 0.08rem;
+}
+
+.fe-desc {
+    font-size: 0.24rem;
+    color: #666;
+    padding: 0 0.56rem;
+    line-height: 0.30rem;
+}
+
+.footer-download {
+    padding-top: 1.22rem;
+    padding-bottom: 1.63rem;
+    background: #fff;
+}
+
+.m-bg-line {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    height: 0.01rem;
+    background: url(../img/line.png) no-repeat 0 0;
+    background-size: auto 0.01rem;
+}
+
+.footer-download a {
+    display: block;
+    height: 0.88rem;
+    width: 4.22rem;
+    border-radius: 0.44rem;
+    background-color: #0188fb;
+    color: #fff;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 0.88rem;
+    text-decoration: none;
+}
+
+.footer-download a:active {
+    background-color: #0172d3
+}
+
+.download-fixed {
+    width: 1.16rem;
+    height: 1.16rem;
+    background: url(../img/download.png) no-repeat center center;
+    background-size: 1.16rem auto;
+    position: fixed;
+    right: 0.26rem;
+    bottom: 0.26rem;
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.download-fixed.show {
+    opacity: 1
+}
+
+#index-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow: hidden
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden
+}
